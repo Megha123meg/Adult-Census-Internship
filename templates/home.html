@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Income Prediction</title>
+</head>
+<body>
+  <div class="login">
+    <h1>Income Prediction</h1>
+
+    <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict') }}" method="post">
+      <label for="Age">Age:</label>
+      <input type="text" id="Age" name="Age" placeholder="Age" required="required"><br>
+      
+      <label for="Work_Class">Work Class:</label>
+      <input type="text" id="Work_Class" name="Work_Class" placeholder="Work_Class" required="required"><br>
+      
+      <label for="fnlwgt">fnlwgt:</label>
+      <input type="text" id="fnlwgt" name="fnlwgt" placeholder="fnlwgt" required="required"><br>
+      
+      <label for="Education">Education:</label>
+      <input type="text" id="Education" name="Education" placeholder="Education" required="required"><br>
+      
+      <label for="Education_num">Education Number:</label>
+      <input type="text" id="Education_num" name="Education_num" placeholder="Education Number" required="required"><br>
+      
+      <label for="Martial_Status">Martial Status:</label>
+      <input type="text" id="Martial_Status" name="Martial_Status" placeholder="Martial Status" required="required"><br>
+      
+      <label for="Occupation">Occupation:</label>
+      <input type="text" id="Occupation" name="Occupation" placeholder="Occupation" required="required"><br>
+      
+      <label for="Relationship">Relationship:</label>
+      <input type="text" id="Relationship" name="Relationship" placeholder="Relationship" required="required"><br>
+      
+      <label for="Race">Race:</label>
+      <input type="text" id="Race" name="Race" placeholder="Race" required="required"><br>
+      
+      <label for="Sex">Sex:</label>
+      <input type="text" id="Sex" name="Sex" placeholder="Sex" required="required"><br>
+      
+      <label for="Capital_gain">Capital Gain:</label>
+      <input type="text" id="Capital_gain" name="Capital_gain" placeholder="Capital Gain" required="required"><br>
+      
+      <label for="Capital_loss">Capital Loss:</label>
+      <input type="text" id="Capital_loss" name="Capital_loss" placeholder="Capital Loss" required="required"><br>
+      
+      <label for="hours_per_week">Hours per Week:</label>
+      <input type="text" id="hours_per_week" name="hours_per_week" placeholder="Hours per Week" required="required"><br>
+      
+      <label for="native_country">Native Country:</label>
+      <input type="text" id="native_country" name="native_country" placeholder="Native Country" required="required"><br>
+      
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+    <!-- Display the prediction result here -->
+    <div>
+      {% if prediction_text %}
+      <h2>Prediction Result:</h2>
+      <p>{{ prediction_text }}</p>
+      {% endif %}
+    </div>
+  </div>
+</body>
+</html>
